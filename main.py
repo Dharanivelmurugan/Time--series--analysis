@@ -34,6 +34,9 @@ daily=d.resample('D').sum()
 mydata=daily
 mydata.head()
 
+households=r.LCLid.value_counts().to_frame().head(3)
+households
+
 from sklearn.preprocessing import MinMaxScaler
 values=mydata['KWh'].values.reshape(-1,1)
 values=values.astype('float32')
